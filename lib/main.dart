@@ -6,7 +6,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,22 +23,19 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Cuenta de Google'),
-      ),
-      body: const SingleChildScrollView(
+    return const Scaffold(
+      body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AccountProtectionSection(),
+            CuentaProtegida(),
             SizedBox(height: 16),
-            PrivacyCheckupSection(),
+            VerificacionPriv(),
             SizedBox(height: 16),
-            MoreInformationSection(),
+            OtraInform(),
             SizedBox(height: 16),
-            FooterSection(),
+            Final(),
           ],
         ),
       ),
@@ -47,14 +43,13 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class AccountProtectionSection extends StatelessWidget {
-  const AccountProtectionSection({super.key});
+class CuentaProtegida extends StatelessWidget {
+  const CuentaProtegida({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        leading: const Icon(Icons.security, color: Colors.green, size: 50),
         title: const Text('Tu cuenta está protegida'),
         subtitle: const Text(
           'La Verificación de seguridad revisó tu cuenta y no encontró acciones recomendadas.',
@@ -69,8 +64,8 @@ class AccountProtectionSection extends StatelessWidget {
   }
 }
 
-class PrivacyCheckupSection extends StatelessWidget {
-  const PrivacyCheckupSection({super.key});
+class VerificacionPriv extends StatelessWidget {
+  const VerificacionPriv({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +77,6 @@ class PrivacyCheckupSection extends StatelessWidget {
           children: [
             const Row(
               children: [
-                Icon(Icons.privacy_tip, color: Colors.blue, size: 50),
                 SizedBox(width: 16),
                 Expanded(
                   child: Text(
@@ -111,8 +105,8 @@ class PrivacyCheckupSection extends StatelessWidget {
   }
 }
 
-class MoreInformationSection extends StatelessWidget {
-  const MoreInformationSection({super.key});
+class OtraInform extends StatelessWidget {
+  const OtraInform({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -142,16 +136,15 @@ class MoreInformationSection extends StatelessWidget {
   }
 }
 
-class FooterSection extends StatelessWidget {
-  const FooterSection({super.key});
-
+class Final extends StatelessWidget {
+  const Final({super.key});
   @override
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.only(top: 20),
       child: Text(
         'Solo tú puedes ver la configuración. También puedes revisar la configuración de Maps, la Búsqueda o cualquier servicio de Google que uses con frecuencia. Google protege la privacidad y la seguridad de tus datos. Más información',
-        style: TextStyle(color: Colors.grey),
+        style: TextStyle(color: Colors.black),
       ),
     );
   }
